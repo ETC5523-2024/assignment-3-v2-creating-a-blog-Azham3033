@@ -1,9 +1,11 @@
 ---
-title: "Welcome To My Blog Template"
+title: "Leveraging Consumer Insights: How Coffee Companies Can Optimize Marketing Strategies Based on Age and Gender Preferences"
 author: "Azham Hassan Venghat"
 date: "2022-09-30"
 categories: [news]
 ---
+
+![coffee](image.png)
 #### Problem Description
 - Coffee companies face an increasingly competitive market, requiring a deep understanding of consumer preferences. This post explores how demographic factors—specifically age and gender—impact coffee consumption patterns, helping companies refine their marketing strategies. By leveraging consumer insights, coffee companies can focus on key consumer groups and coffee preferences, improving their engagement and brand loyalty.
 
