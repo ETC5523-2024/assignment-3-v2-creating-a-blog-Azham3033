@@ -1,12 +1,39 @@
 ---
 title: "Welcome To My Blog Template"
-author: "Emi Tanaka"
-date: "2022-07-18"
+author: "Azham Hassan Venghat"
+date: "2022-09-30"
 categories: [news]
 ---
+#### Problem Description
+- Coffee companies face an increasingly competitive market, requiring a deep understanding of consumer preferences. This post explores how demographic factors—specifically age and gender—impact coffee consumption patterns, helping companies refine their marketing strategies. By leveraging consumer insights, coffee companies can focus on key consumer groups and coffee preferences, improving their engagement and brand loyalty.
 
-This is the first post in a Quarto blog. Welcome!
+#### Data Description
+- The data used in this analysis comes from a TidyTuesday coffee consumption survey. The dataset captures consumer behavior across various age groups and genders, highlighting preferences for different coffee types. Key variables include:
 
-![](thumbnail.jpg)
+- Age group: Categorical variable representing age ranges (e.g., 18-24, 25-34).
+- Gender: Male or female.
+- Coffee type: Different coffee types (e.g., Latte, Espresso, Regular drip coffee).
+- Count: Number of consumers for each category.
+- The analysis focuses on understanding the largest coffee-drinking demographics and their favorite coffee types, enabling companies to tailor marketing strategies accordingly.
+
+##Analysis
+#### Coffee Consumption by Age and Gender
+- As Figure 1 illustrates, the most significant coffee-drinking group among males is the 25-34 age bracket, with 1,284 coffee consumers. Females show peak consumption in the 35-44 age group, totaling 419 consumers. This difference highlights the importance of targeted marketing for different demographic segments.
+
+
+
+- Older consumers, especially those aged 55 and above, make up a smaller portion of the overall coffee consumer base. However, their preference for traditional coffee types like regular drip coffee suggests that this demographic remains a valuable market, particularly for classic coffee offerings.
+
+### Coffee Preferences by Gender
+- Regular drip coffee is the preferred choice for both males and females, as shown in Table 1. For males, 829 prefer regular drip coffee, while 277 females prefer it. Younger males, especially those between 25-44, tend to favor specialty coffees like Espresso (258) and Latte (301). This insight suggests an opportunity for coffee companies to promote these coffee types specifically to younger male consumers.
+
+#### Coffee Type	Male Count	Female Count
+
+
+### Conclusion
+- This analysis provides critical insights into coffee consumption trends that can inform more effective marketing strategies. Males aged 25-34, the largest consumer group, show strong preferences for specialty coffees like lattes and espressos. On the other hand, older consumers continue to favor regular drip coffee, representing a solid market for classic coffee products.
+
+- By aligning product offerings and marketing messages with these demographic trends, coffee companies can enhance their customer engagement and drive brand loyalty.
+
 
 
