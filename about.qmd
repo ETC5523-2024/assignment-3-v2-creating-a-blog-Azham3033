@@ -4,8 +4,8 @@ description: Master of Business Analytics Student.
 page-layout: full
 image: azham.jpg
 about:
-  template: trestles
-  image-width: 10em
+  template: solana
+  image-width: 20em
   image-shape: round
   links:
     - icon: github

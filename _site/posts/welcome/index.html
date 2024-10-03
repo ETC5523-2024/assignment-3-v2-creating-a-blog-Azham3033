@@ -9,7 +9,7 @@
 <meta name="author" content="Azham Hassan Venghat">
 <meta name="dcterms.date" content="2022-09-30">
 
-<title>Data-Driven Insights: Engineering Analytics for Innovation - Leveraging Consumer Insights: How Coffee Companies Can Optimize Marketing Strategies Based on Age and Gender Preferences</title>
+<title>Leveraging Consumer Insights: How Coffee Companies Can Optimize Marketing Strategies Based on Age and Gender Preferences</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -62,6 +96,9 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+<script src="../../site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="../../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -72,11 +109,6 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
-    <a class="navbar-brand" href="../../index.html">
-    <span class="navbar-title">Data-Driven Insights: Engineering Analytics for Innovation</span>
-    </a>
-  </div>
             <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
@@ -84,16 +116,12 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html" rel="" target="">
+    <a class="nav-link" href="../../about.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html" rel="" target="">
- <span class="menu-text">About</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../blog.html" rel="" target="">
- <span class="menu-text">Blog</span></a>
+    <a class="nav-link" href="../../index.html" rel="" target="">
+ <span class="menu-text">blog</span></a>
   </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/Azham3033" rel="" target=""><i class="bi bi-github" role="img">
@@ -149,36 +177,180 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p><img src="image.png" class="img-fluid" alt="coffee"> #### Problem Description - Coffee companies face an increasingly competitive market, requiring a deep understanding of consumer preferences. This post explores how demographic factors—specifically age and gender—impact coffee consumption patterns, helping companies refine their marketing strategies. By leveraging consumer insights, coffee companies can focus on key consumer groups and coffee preferences, improving their engagement and brand loyalty.</p>
-<section id="data-description" class="level4">
-<h4 class="anchored" data-anchor-id="data-description">Data Description</h4>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image.png" class="img-fluid figure-img" width="300"></p>
+<figcaption class="figure-caption">Brewing Consumer Insights: How Coffee Chats Shape Marketing Strategies</figcaption>
+</figure>
+</div>
+<section id="problem-description" class="level3">
+<h3 class="anchored" data-anchor-id="problem-description">Problem Description</h3>
+<ul>
+<li>In today’s competitive coffee market, understanding what drives consumer behavior is more important than ever. This post explores the impact of demographic factors—specifically age and gender—on coffee consumption patterns. By uncovering how different groups prefer their coffee, companies can refine their marketing strategies to better connect with their target audiences, foster stronger brand loyalty, and ultimately stand out in the crowded marketplace.</li>
+</ul>
+</section>
+<section id="data-description" class="level3">
+<h3 class="anchored" data-anchor-id="data-description">Data Description</h3>
 <ul>
 <li><p>The data used in this analysis comes from a TidyTuesday coffee consumption survey. The dataset captures consumer behavior across various age groups and genders, highlighting preferences for different coffee types. Key variables include:</p></li>
 <li><p>Age group: Categorical variable representing age ranges (e.g., 18-24, 25-34).</p></li>
 <li><p>Gender: Male or female.</p></li>
 <li><p>Coffee type: Different coffee types (e.g., Latte, Espresso, Regular drip coffee).</p></li>
 <li><p>Count: Number of consumers for each category.</p></li>
+<li><p>In the data cleaning process, several important steps were taken to ensure the dataset was properly prepared for analysis:</p></li>
+</ul>
+<p><strong>Creating a Unique Identifier</strong>: A new column, id, was added to the dataset using the mutate() function. This unique identifier helps track each individual respondent.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>coffee_survey<span class="ot">&lt;-</span>coffee_survey<span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">id=</span><span class="fu">row_number</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li><strong>Selecting Relevant Variables</strong>: To focus on the key aspects of the analysis, unnecessary variables were removed, and only the columns that were most relevant to coffee consumption patterns were kept, such as age, gender, cups of coffee consumed, and total spending.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>coffee_survey_filtered<span class="ot">&lt;-</span> coffee_survey <span class="sc">%&gt;%</span> <span class="fu">select</span>(id,age,cups,brew,gender,purchase,total_spend,spent_equipment)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a> <span class="fu">view</span>(coffee_survey_filtered)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li><strong>Filtering for Male and Female Respondents</strong>: Since the analysis focuses on the influence of gender, the data was filtered to include only respondents who identified as either male or female, excluding any other gender identities or missing data.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter data to include only male and female respondents</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>coffee_filtered <span class="ot">&lt;-</span> coffee_survey <span class="sc">%&gt;%</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(gender <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Male"</span>, <span class="st">"Female"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li><strong>Ordering Age Groups</strong>: The age variable was converted into an ordered factor to ensure that the age groups were analyzed in the correct sequence. This step ensures that the progression of age groups, from the youngest (&lt;18 years) to the oldest (&gt;65 years), is maintained during analysis.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the desired order for the age groups</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>age_order <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"&lt;18 years old"</span>, <span class="st">"18-24 years old"</span>, <span class="st">"25-34 years old"</span>, <span class="st">"35-44 years old"</span>, <span class="st">"45-54 years old"</span>, <span class="st">"55-64 years old"</span>, <span class="st">"&gt;65 years old"</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert the age column to a factor and specify the correct order</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>coffee_filtered<span class="sc">$</span>age <span class="ot">&lt;-</span> <span class="fu">factor</span>(coffee_filtered<span class="sc">$</span>age, <span class="at">levels =</span> age_order)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li><p>These steps refined the dataset by focusing on the relevant demographic factors, filtering unnecessary information, and ensuring that categorical variables like age were correctly ordered for analysis. This clean and organized data allows for deeper insights into how age and gender influence coffee consumption patterns.</p></li>
 <li><p>The analysis focuses on understanding the largest coffee-drinking demographics and their favorite coffee types, enabling companies to tailor marketing strategies accordingly.</p></li>
 </ul>
-<p>##Analysis #### Coffee Consumption by Age and Gender - As Figure 1 illustrates, the most significant coffee-drinking group among males is the 25-34 age bracket, with 1,284 coffee consumers. Females show peak consumption in the 35-44 age group, totaling 419 consumers. This difference highlights the importance of targeted marketing for different demographic segments.</p>
+</section>
+<section id="analysis" class="level2">
+<h2 class="anchored" data-anchor-id="analysis">Analysis</h2>
+<section id="coffee-consumption-by-age-and-gender" class="level3">
+<h3 class="anchored" data-anchor-id="coffee-consumption-by-age-and-gender">Coffee Consumption by Age and Gender</h3>
+<ul>
+<li>As <a href="#fig-coffee">Figure&nbsp;1</a> illustrates, the most significant coffee-drinking group among males is the 25-34 age bracket, with 1,284 coffee consumers. Females show peak consumption in the 35-44 age group, totaling 419 consumers. This difference highlights the importance of targeted marketing for different demographic segments as described in the <a href="###%20Problem%20Description">problem statement</a></li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-coffee" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="index_files/figure-html/fig-coffee-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Figure&nbsp;1: Coffee Consumers by Age and Gender</figcaption>
+</figure>
+</div>
+</div>
+</div>
 <ul>
 <li>Older consumers, especially those aged 55 and above, make up a smaller portion of the overall coffee consumer base. However, their preference for traditional coffee types like regular drip coffee suggests that this demographic remains a valuable market, particularly for classic coffee offerings.</li>
 </ul>
 </section>
 <section id="coffee-preferences-by-gender" class="level3">
 <h3 class="anchored" data-anchor-id="coffee-preferences-by-gender">Coffee Preferences by Gender</h3>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-striped table-sm small" data-quarto-postprocess="true">
+<caption>Coffee Preferences by Gender </caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Coffee Type</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Male Count</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Female Count</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Pourover</td>
+<td style="text-align: right;">829</td>
+<td style="text-align: right;">112</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Latte</td>
+<td style="text-align: right;">301</td>
+<td style="text-align: right;">271</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Regular drip coffee</td>
+<td style="text-align: right;">277</td>
+<td style="text-align: right;">90</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Espresso</td>
+<td style="text-align: right;">258</td>
+<td style="text-align: right;">22</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Cortado</td>
+<td style="text-align: right;">218</td>
+<td style="text-align: right;">45</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Cappuccino</td>
+<td style="text-align: right;">191</td>
+<td style="text-align: right;">89</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Americano</td>
+<td style="text-align: right;">160</td>
+<td style="text-align: right;">60</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Iced coffee</td>
+<td style="text-align: right;">83</td>
+<td style="text-align: right;">48</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Other</td>
+<td style="text-align: right;">69</td>
+<td style="text-align: right;">23</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mocha</td>
+<td style="text-align: right;">61</td>
+<td style="text-align: right;">41</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Cold brew</td>
+<td style="text-align: right;">57</td>
+<td style="text-align: right;">32</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Blended drink</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">20</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
 <ul>
-<li>Regular drip coffee is the preferred choice for both males and females, as shown in Table 1. For males, 829 prefer regular drip coffee, while 277 females prefer it. Younger males, especially those between 25-44, tend to favor specialty coffees like Espresso (258) and Latte (301). This insight suggests an opportunity for coffee companies to promote these coffee types specifically to younger male consumers.</li>
+<li>Regular drip coffee is the preferred choice for both males and females, as shown in <span class="citation" data-cites="gen_count">@gen_count</span>. For males, 829 prefer regular drip coffee, while 277 females prefer it. Younger males, especially those between 25-44, tend to favor specialty coffees like Espresso (258) and Latte (301). This insight suggests an opportunity for coffee companies to promote these coffee types specifically to younger male consumers.</li>
 </ul>
-<section id="coffee-type-male-count-female-count" class="level4">
-<h4 class="anchored" data-anchor-id="coffee-type-male-count-female-count">Coffee Type Male Count Female Count</h4>
-</section>
 </section>
 <section id="conclusion" class="level3">
 <h3 class="anchored" data-anchor-id="conclusion">Conclusion</h3>
 <ul>
 <li><p>This analysis provides critical insights into coffee consumption trends that can inform more effective marketing strategies. Males aged 25-34, the largest consumer group, show strong preferences for specialty coffees like lattes and espressos. On the other hand, older consumers continue to favor regular drip coffee, representing a solid market for classic coffee products.</p></li>
 <li><p>By aligning product offerings and marketing messages with these demographic trends, coffee companies can enhance their customer engagement and drive brand loyalty.</p></li>
+</ul>
+</section>
+</section>
+<section id="reference" class="level2">
+<h2 class="anchored" data-anchor-id="reference">Reference</h2>
+<ul>
+<li>TidyTuesday Project, Coffee Consumption Dataset,</li>
+<li>Lone, A., Alnawah, A. K., Hadadi, A. S., Alturkie, F. M., Aldreweesh, Y. A., &amp; Alhedhod, A. T. (2023). Coffee consumption behavior in young adults: exploring motivations, frequencies, and reporting adverse effects and withdrawal symptoms. Psychology Research and Behavior Management, Volume 16, 3925–3937. https://doi.org/10.2147/prbm.s427867</li>
 </ul>
 
 
