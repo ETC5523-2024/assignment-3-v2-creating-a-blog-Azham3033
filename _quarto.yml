@@ -9,7 +9,7 @@ website:
       - href: about.qmd
         text: Home
       - href: index.qmd
-        text: blog
+        text: Blog
       - icon: github
         href: https://github.com/Azham3033
 format:
